@@ -1,0 +1,9 @@
+pip install streamlit
+
+pip install openai==0.28
+
+pip install opencv-python
+
+pip install ultralytics
+
+source venv/bin/activate
