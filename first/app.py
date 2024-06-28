@@ -3,7 +3,7 @@ from views import show_my_fridge, show_ingredient_list, show_recipe_recommendati
 from utils import local_css, get_image_base64
 
 def main():
-    local_css("./styles.css")  # Apply custom CSS if needed
+    local_css("./first/styles.css")  # Apply custom CSS if needed
 
     # Define sidebar layout using st.sidebar.button
     st.sidebar.title("내 냉장고")  # Sidebar title
