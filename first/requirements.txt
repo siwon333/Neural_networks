@@ -1,11 +1,6 @@
 Pillow
-os
 pandas
-sqlite3
-base64
-sqlite3
-cv2
-datetime
+opencv-python
 ultralytics
 numpy
 streamlit
