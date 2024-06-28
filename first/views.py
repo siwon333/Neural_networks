@@ -13,7 +13,7 @@ def show_my_fridge():
     st.header("현재 냉장고 사진")
 
     # connect.py 실행하여 냉장고 사진 촬영
-    result = subprocess.run(['python', './first/connect.py'], capture_output=True, text=True)
+    result = subprocess.run(['python', 'first/connect.py'], capture_output=True, text=True)
     if result.returncode != 0:
         st.error(f"Error running connect.py: {result.stderr}")
         return
