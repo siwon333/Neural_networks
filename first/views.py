@@ -69,6 +69,13 @@ def show_recipe_recommendations():
     classes = cursor.fetchall()
     class_list = [class_[0] for class_ in classes]
 
+    if st.button('자취생'):
+        Target = 자취생
+    elif st.button('4인 가족'):
+        Target = 4인가족
+    elif st.button('다이어터'):
+        Target = 다이어터
+
     # 모든 클래스를 사용하여 레시피 생성 및 출력
     recipe = get_recipe_recommendations(class_list)
     if recipe:
