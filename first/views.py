@@ -69,19 +69,27 @@ def show_recipe_recommendations():
     classes = cursor.fetchall()
     class_list = [class_[0] for class_ in classes]
 
+    # 사용자가 선택한 대상(Target) 변수 초기화
+    Target = None
+
+    # 버튼을 통해 대상 선택
     if st.button('자취생'):
-        Target = 자취생
+        Target = "자취생"
     elif st.button('4인 가족'):
-        Target = 4인가족
+        Target = "4인 가족"
     elif st.button('다이어터'):
-        Target = 다이어터
+        Target = "다이어터"
+    elif st.button('알레르기 음식 제외'):
+        st.write("알레르기가 있는 음식을 선택해주세요.")
+        # 여기서 사용자가 선택한 알레르기 음식을 받아오는 로직 추가 필요
 
     # 모든 클래스를 사용하여 레시피 생성 및 출력
-    recipe = get_recipe_recommendations(class_list)
-    if recipe:
-        st.markdown(f"### 추천 레시피")
-        st.write(recipe)
-    else:
-        st.error("레시피를 생성하는 중 오류가 발생했습니다.")
+    if Target:
+        recipe = get_recipe_recommendations(class_list, Target)
+        if recipe:
+            st.markdown(f"### 추천 레시피")
+            st.write(recipe)
+        else:
+            st.error("레시피를 생성하는 중 오류가 발생했습니다.")
 
     conn.close()
