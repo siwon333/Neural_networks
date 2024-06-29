@@ -90,30 +90,6 @@ def get_recipe_recommendations(class_list, target):
             대체 재료 제안:
             레시피를 적을때에 {ingredients}는 모두 한국어로 답변해 주십시오!!
             '''
-        elif target == "알레르기 음식 제외":
-            prompt = f'''
-            알레르기가 있는 음식을 선택해주세요. 
-            {ingredients}는 모두 한국어로 답변해 주십시오!!
-            이 레시피를 사용할 사람들은 {target}입니다. {target}에 맞는 레시피를 작성해 주십시오.
-
-            냉장고 속 재료:
-            [{ingredients}, 쌀, 닭고기, 소고기, 돼지고기, 국수, 파스타면, 각종 양념류, 계란 ]
-
-            대상 : {target}
-
-            추가 요구사항:
-            1. 난이도(상, 중, 하)도 함께 제안해주세요.
-            2. 각 레시피에 대해 왜 이 조합이 좋은지 간단히 설명해주세요.
-            3. 선택적으로 사용할 수 있는 대체 재료도 제안해주세요.
-
-            레시피 형식:
-            요리 이름:
-            재료:
-            조리 방법:
-            추천 이유:
-            대체 재료 제안:
-            레시피를 적을때에 {ingredients}는 모두 한국어로 답변해 주십시오!!
-            '''
 
         # OpenAI API를 통해 레시피 생성 요청
         response = openai.ChatCompletion.create(
